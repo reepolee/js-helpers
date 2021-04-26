@@ -1,4 +1,7 @@
-export default function isEven(num: number) {
+export default function name() {
+    return "js-helpers";
+}
+export function isEven(num: number) {
     let ret = num % 2 === 0;
     return ret;
 }
