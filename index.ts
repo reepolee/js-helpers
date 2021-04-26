@@ -20,10 +20,15 @@ function avif(url: string, size: number) {
         s = s.replace(fname, `${size}/${fname}`);
     }
 
-    if (s.includes("png")) {
+    if (s.endsWith("png")) {
         return s.split(".png").join(".avif");
     }
-    return s.split(".jpg").join(".avif");
+    if (s.endsWith("jpg")) {
+        return s.split(".jpg").join(".avif");
+    }
+    if (s.endsWith("jpeg")) {
+        return s.split(".jpeg").join(".avif");
+    }
 }
 
 // ----------------------------------------------------------------------------
@@ -45,10 +50,15 @@ function webp(url: string, size: number) {
         s = s.replace(fname, `${size}/${fname}`);
     }
 
-    if (s.includes("png")) {
+    if (s.endsWith("png")) {
         return s.split(".png").join(".webp");
     }
-    return s.split(".jpg").join(".webp");
+    if (s.endsWith("jpg")) {
+        return s.split(".jpg").join(".webp");
+    }
+    if (s.endsWith("jpeg")) {
+        return s.split(".jpeg").join(".webp");
+    }
 }
 
 export { dateForDisplay, log, avif, jpeg, webp };
