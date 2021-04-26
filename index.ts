@@ -1,6 +1,6 @@
-export default () {
+export default () => {
     return "js-helpers";
-}
+};
 
 // ----------------------------------------------------------------------------
 function dateForDisplay(dateValue: string, locale: string) {
