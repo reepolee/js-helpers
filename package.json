@@ -1,5 +1,5 @@
 {
-    "name": "jsh",
+    "name": "js-helpers",
     "version": "0.1.2",
     "description": "Common JS helpers for development",
     "main": "index.ts",
