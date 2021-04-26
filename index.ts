@@ -13,7 +13,9 @@ function log(param: any) {
 }
 
 // ----------------------------------------------------------------------------
-function avif(url: string, size: number) {
+// converts url string to passed extension, like jpg to avif or png to webp
+// prepends size if passed for srcset, responsive images
+function imgExtension(toExtension: string, url: string, size?: number) {
     let s = url;
     if (size) {
         const fname = s.split("/").pop().split("/").pop();
@@ -21,18 +23,18 @@ function avif(url: string, size: number) {
     }
 
     if (s.endsWith("png")) {
-        return s.split(".png").join(".avif");
+        return s.split(".png").join("." + toExtension);
     }
     if (s.endsWith("jpg")) {
-        return s.split(".jpg").join(".avif");
+        return s.split(".jpg").join("." + toExtension);
     }
     if (s.endsWith("jpeg")) {
-        return s.split(".jpeg").join(".avif");
+        return s.split(".jpeg").join("." + toExtension);
     }
 }
 
 // ----------------------------------------------------------------------------
-function jpeg(url: string, size: number) {
+function img(url: string, size?: number) {
     let s = url;
     if (size) {
         const fname = s.split("/").pop().split("/").pop();
@@ -43,22 +45,13 @@ function jpeg(url: string, size: number) {
 }
 
 // ----------------------------------------------------------------------------
-function webp(url: string, size: number) {
-    let s = url;
-    if (size) {
-        const fname = s.split("/").pop().split("/").pop();
-        s = s.replace(fname, `${size}/${fname}`);
-    }
-
-    if (s.endsWith("png")) {
-        return s.split(".png").join(".webp");
-    }
-    if (s.endsWith("jpg")) {
-        return s.split(".jpg").join(".webp");
-    }
-    if (s.endsWith("jpeg")) {
-        return s.split(".jpeg").join(".webp");
-    }
+function avif(url: string, size?: number) {
+    return imgExtension("avif", url, size);
 }
 
-export { dateForDisplay, log, avif, jpeg, webp };
+// ----------------------------------------------------------------------------
+function webp(url: string, size?: number) {
+    return imgExtension("webp", url, size);
+}
+
+export { dateForDisplay, log, img, avif, webp };

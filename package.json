@@ -1,6 +1,6 @@
 {
     "name": "js-helpers",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "description": "Common JS helpers for development",
     "main": "index.ts",
     "scripts": {
