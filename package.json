@@ -1,0 +1,11 @@
+{
+  "name": "js-helpers",
+  "version": "0.1.1",
+  "description": "Common JS helpers for development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ales Vaupotic",
+  "license": "MIT"
+}
